@@ -65,7 +65,7 @@ public class ConnectionPoolUtil {
 		connectionPool = new GenericObjectPool();
 		connectionPool.setMaxActive(getMaxActive());
 		connectionPool.setMaxWait(getMaxWait());
-		PoolableConnectionFactory poolableConnectionFactory = new PoolableConnectionFactory(connectionFactory, connectionPool, null, "SELECT * FROM dual", false, true);
+		PoolableConnectionFactory poolableConnectionFactory = new PoolableConnectionFactory(connectionFactory, connectionPool, null, "SELECT * FROM dual", true, true);
 		connectionPool.setFactory(poolableConnectionFactory);
 		Class.forName(COMMONS_DBCP_POOL_DRIVER);
 		poolingDriver = (PoolingDriver) DriverManager.getDriver(COMMONS_DBCP);
