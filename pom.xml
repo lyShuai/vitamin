@@ -11,15 +11,55 @@
 	<name>A sample Project with new technologies' usages.</name>
 
 	<properties>
+		<!-- versions defined for the major dependencies -->
+		<junit.version>4.10</junit.version>
 
+		<!-- attributes define for Plugins -->
 		<project.build.sourceEncoding>
 			UTF-8
 		</project.build.sourceEncoding>
 		<jdk.version>1.6</jdk.version>
 	</properties>
 
+	<dependencies>
+
+		<!-- database============================ -->
+		<dependency>
+			<groupId>commons-dbutils</groupId>
+			<artifactId>commons-dbutils</artifactId>
+			<version>1.5</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-pool</groupId>
+			<artifactId>commons-pool</artifactId>
+			<version>1.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.21</version>
+		</dependency>
+		<!-- ===============================database -->
+
+		<!-- junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
 	<build>
 		<plugins>
+			<!-- Maven compiler Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -31,6 +71,7 @@
 				</configuration>
 			</plugin>
 
+			<!-- Maven war Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
@@ -40,6 +81,7 @@
 				</configuration>
 			</plugin>
 
+			<!-- Maven eclipse Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-eclipse-plugin</artifactId>
